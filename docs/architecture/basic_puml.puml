@@ -1,0 +1,11 @@
+@startuml SystemContext3
+!include ./C4-PlantUML/C4_Context.puml
+
+' Person(admin, "Admin", "Manages the Django application")
+Person(admin, "Admin", $sprite="person")
+
+System(djangoApp, "Django Web App", "Handles user requests and serves content")
+
+Rel(admin, djangoApp, "Uses")
+
+@enduml

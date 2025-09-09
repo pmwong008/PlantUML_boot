@@ -19,3 +19,5 @@ venv/
 
 # PlantUML
 docs/architecture/*.png
+
+docs/architecture/C4-PlantUML/
