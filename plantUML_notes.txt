@@ -1,0 +1,24 @@
+https://github.com/pmwong008/PlantUML_boot.git
+
+git remote add origin https://github.com/pmwong008/PlantUML_boot.git
+
+
+
+java -jar plantuml.jar your_diagram.puml 
+# rename the puml filename if don't want to overwrite existing
+
+
+git clone https://github.com/plantuml-stdlib/C4-PlantUML.git
+# clone inside docs/architecture folder
+
+# Install Plugin In PyCharm
+File -> Settings -> Plugins -> MarketPlace -> plantuml4idea
+
+Ethical Considerations in aI development
+Conclusion
+As AI continues its rapid advancement and integration into various aspects of our lives, addressing the ethical dimensions of its development becomes increasingly imperative. Ethical considerations in AI encompass a broad spectrum, from bias and fairness to transparency, privacy, and accountability.
+
+  Midjourney: The AI That Won Over Humans
+A concerted effort from all stakeholders—developers, policymakers, ethicists, and society at large—is essential to navigate these ethical challenges. Ethical frameworks, continuous evaluation, education, and a commitment to a human-centric approach are pivotal in ensuring that AI aligns with our ethical values and serves the greater good of humanity.
+
+Ethical AI development isn’t merely a moral obligation; it’s an indispensable pillar for building a future where AI contributes positively to society while upholding fundamental ethical principles and respecting human dignity and rights. As we progress further into the AI era, fostering an ethical AI ecosystem is pivotal for a sustainable and harmonious coexistence between humans and intelligent machines.

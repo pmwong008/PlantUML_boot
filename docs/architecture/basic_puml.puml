@@ -5,7 +5,9 @@
 Person(admin, "Admin", $sprite="person")
 
 System(djangoApp, "Django Web App", "Handles user requests and serves content")
+System(JournalApp, "Journal App", "Handles user input and save to database")
 
 Rel(admin, djangoApp, "Uses")
+Rel(admin, JournalApp, "Uses")
 
 @enduml
