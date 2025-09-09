@@ -1,0 +1,11 @@
+@startuml
+object customer1 {
+    CustomerId = 1
+    Name = "John"
+}
+object order1 {
+    OrderId = 100
+    OrderDate = "2023-08-18"
+}
+customer1 --> order1 : places
+@enduml

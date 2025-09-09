@@ -1,0 +1,7 @@
+@startuml
+object WebApp
+object API
+object Database
+WebApp -> API : Request Order
+API -> Database : Store Order
+@enduml

@@ -22,3 +22,8 @@ As AI continues its rapid advancement and integration into various aspects of ou
 A concerted effort from all stakeholders—developers, policymakers, ethicists, and society at large—is essential to navigate these ethical challenges. Ethical frameworks, continuous evaluation, education, and a commitment to a human-centric approach are pivotal in ensuring that AI aligns with our ethical values and serves the greater good of humanity.
 
 Ethical AI development isn’t merely a moral obligation; it’s an indispensable pillar for building a future where AI contributes positively to society while upholding fundamental ethical principles and respecting human dignity and rights. As we progress further into the AI era, fostering an ethical AI ecosystem is pivotal for a sustainable and harmonious coexistence between humans and intelligent machines.
+
+https://medium.com/@erickzanetti/understanding-the-c4-model-a-practical-guide-with-plantuml-examples-76cfdcbe0e01
+https://medium.com/@usetech/visualizing-the-architecture-with-the-c4-model-and-plantuml-fe45af55a814
+https://medium.com/software-architecture-foundations/software-architecture-modeling-with-c4-model-e9e61d952121
+https://apiumhub.com/tech-blog-barcelona/c4-plantuml/
