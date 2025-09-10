@@ -1,0 +1,23 @@
+@startuml
+title TMOS Catalog Browsing Flow
+
+start
+
+repeat
+  :Search Catalog;
+  :View List of Results;
+  :Select an Item;
+repeat while (Not done with selection?)
+
+:View Item Details;
+:Rate or Comment?;
+
+if (Is Member?) then (yes)
+  :Rate Item;
+  :Leave Comment;
+else (no)
+  :Prompt Sign-up;
+endif
+
+stop
+@enduml

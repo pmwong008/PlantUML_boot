@@ -1,0 +1,24 @@
+@startuml
+title TMOS Whiffie Game Flow
+
+start
+
+:Load Daily Challenge;
+
+repeat
+  :Ask for a Guess;
+  :Check Guess;
+  if (Guess is Correct?) then (yes)
+    :Dashboard;
+    if (Entitled for gifts?) then (yes)
+      :Process Order;
+    endif
+    break
+  else (no)
+    :Increment attempt count;
+  endif
+repeat while (Attempts < 5)
+
+:Game Over;
+stop
+@enduml

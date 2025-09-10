@@ -3,8 +3,8 @@ title TMOS Whiffie Chatbot Flow
 start
 
 :Q & A;
-:Recommended bottle by our Messenger;
-if (Accept the recommendation?) then (yes)
+:Items Recommended by our Messenger;
+if (Accept and Select From the recommendation?) then (yes)
 
     if (Member?) then (yes)
         :Process Order;
