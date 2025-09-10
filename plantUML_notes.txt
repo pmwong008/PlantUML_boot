@@ -3,15 +3,16 @@ https://github.com/pmwong008/PlantUML_boot.git
 git remote add origin https://github.com/pmwong008/PlantUML_boot.git
 
 
-
 java -jar plantuml.jar your_diagram.puml 
 # rename the puml filename if don't want to overwrite existing
+
 
 
 git clone https://github.com/plantuml-stdlib/C4-PlantUML.git
 # clone inside docs/architecture folder
 
-# Install Plugin In PyCharm
+# Install and Configure Plugin In PyCharm
+# or install PlantUML Plugin when prompted to do so
 File -> Settings -> Plugins -> MarketPlace -> plantuml4idea
 
 Ethical Considerations in aI development

@@ -1,0 +1,17 @@
+@startuml
+|#pink|Whiffi|
+start
+if (color?) is (red) then
+#pink:**action red**;
+:foo1;
+else (not red)
+|#lightgray|Wiki|
+#lightgray:**action not red**;
+:foo2;
+endif
+|Selfie|
+#lightblue:Edit Profile;
+:Game analytics; \nActivity records;
+
+stop
+@enduml
