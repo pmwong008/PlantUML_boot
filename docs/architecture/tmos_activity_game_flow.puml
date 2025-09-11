@@ -6,12 +6,21 @@ start
 :Load Daily Challenge;
 
 repeat
-  :Ask for a Guess;
+  :Hints & Guess;
   :Check Guess;
   if (Guess is Correct?) then (yes)
-    :Dashboard;
-    if (Entitled for gifts?) then (yes)
-      :Process Order;
+    if (Is Member?) then (yes)
+      :Dashboard;
+      if (Entitled for gifts?) then (yes)
+        :Process Order;
+      endif
+    else (no)
+      :Prompt Sign-Up;
+      :Sign-Up Flow;
+      :Dashboard;
+      if (Entitled for gifts?) then (yes)
+        :Process Order;
+      endif
     endif
     break
   else (no)
@@ -22,3 +31,4 @@ repeat while (Attempts < 5)
 :Game Over;
 stop
 @enduml
+

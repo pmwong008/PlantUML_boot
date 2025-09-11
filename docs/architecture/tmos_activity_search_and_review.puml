@@ -1,12 +1,12 @@
 @startuml
-title TMOS Search and Review Flow
+title TMOS Wiki Flow
 
 start
 
 repeat
   :Search Catalog;
   :View List of Results;
-  :Select an Item;
+
 repeat while (Not done with selection?)
 
 :View Item Details;

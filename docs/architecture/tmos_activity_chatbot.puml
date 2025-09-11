@@ -4,7 +4,7 @@ start
 
 :Q & A;
 :Items Recommended by our Messenger;
-if (Accept and Select From the recommendation?) then (yes)
+if (Accept and Select From the recommended items?) then (yes)
 
     if (Member?) then (yes)
         :Process Order;
