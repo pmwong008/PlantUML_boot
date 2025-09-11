@@ -1,4 +1,5 @@
 @startuml
+!theme sketchy-outline
 title: <size:20> <&account-login> TMOS Member App Flow
 actor Member
 participant "Launch TMOS" as App

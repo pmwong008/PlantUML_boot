@@ -1,4 +1,5 @@
 @startuml
+!theme sketchy-outline
 title: <size:20>TMOS Whiffie <&double-quote-serif-left>Chatbot<&double-quote-serif-right> Flow</size>
 
 start
