@@ -1,9 +1,0 @@
-@startuml
-node "Web Server" {
-    [Web Application]
-}
-node "Database Server" {
-    [Database]
-}
-[Web Application] --> [Database]
-@enduml

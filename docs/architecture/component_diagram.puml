@@ -1,4 +1,0 @@
-@startuml
-[API] --> [Database]
-[Payment Service] --> [Payment Gateway]
-@enduml

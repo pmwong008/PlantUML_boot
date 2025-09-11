@@ -1,5 +1,6 @@
 @startuml
-title TMOS Whiffie Chatbot Flow
+title: <size:20>TMOS Whiffie <&double-quote-serif-left>Chatbot<&double-quote-serif-right> Flow</size>
+
 start
 
 :Q & A;

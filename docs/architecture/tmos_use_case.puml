@@ -1,6 +1,6 @@
 @startuml
 
-title TMOS Use Case Diagram
+title <size:20> <&chevron-right> TMOS Use Case Diagram
 
 left to right direction
 actor Guest as g

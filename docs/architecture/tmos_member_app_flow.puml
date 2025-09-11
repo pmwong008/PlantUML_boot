@@ -1,0 +1,14 @@
+@startuml
+title: <size:20> <&account-login> TMOS Member App Flow
+actor Member
+participant "Launch TMOS" as App
+participant "Member Service" as Backend
+database "Database" as DB
+
+Member -> App: Login
+App -> Backend: Send Credentials
+Backend -> DB: Verify User
+DB --> Backend: User Data
+Backend --> App: User Profile/Dashboard
+App --> Member: Display Profile/Dashboard
+@enduml
