@@ -1,5 +1,18 @@
 @startuml
-!theme sketchy-outline
+!theme sketchy
+skinparam handwritten true
+
+
+skinparam activity {
+  BackgroundColor #E3F2FD
+  BorderColor #1976D2
+  FontColor #0D47A1
+}
+skinparam activityDiamondBackgroundColor #FFF3E0
+skinparam activityDiamondBorderColor #FF6F00
+skinparam activityDiamondFontColor #BF360C
+skinparam activityStartColor #4CAF50
+skinparam activityEndColor #F44336
 title: <size:20>TMOS Whiffie <&double-quote-serif-left>Chatbot<&double-quote-serif-right> Flow</size>
 
 start

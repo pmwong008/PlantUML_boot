@@ -1,5 +1,17 @@
 @startuml
-!theme sketchy-outline
+!theme sketchy
+skinparam handwritten true
+skinparam packageBorderColor white
+
+skinparam usecase {
+  BackgroundColor #FAFAFA
+  FontColor #212121
+  BorderColor #BDBDBD
+  FontSize 13
+}
+skinparam ArrowFontColor black
+skinparam ActorFontColor black
+
 
 title <size:20> <&chevron-right> TMOS Use Case Diagram
 
@@ -8,18 +20,18 @@ actor Guest as g
 actor Member as m
 
 
-package Whiffie {
+package Whiffie #FFEB3B {
   usecase "Chat Bot" as UC1
   usecase "Word / Memory Game" as UC2
 
 }
 
-package Wiki {
+package Wiki #FFEB3B {
   usecase "Search" as UC3
   usecase "Rate & Review" as UC4
 }
 
-package Selfie {
+package Selfie #FFEB3B {
   usecase "Profile" as UC5
   usecase "Dashboard" as UC6
   usecase "Portfolio" as UC7
@@ -27,18 +39,19 @@ package Selfie {
 
 UC1 <-- g : Play
 UC2 <-- g : Play
-UC3 "Use" <-- g
-UC4 <-.- g : "View"
+UC3 <-- g : Use
+UC4 <-.- g : View
 'UC7 <-- UC4
 
 
-m --> UC1 : Play and Gain
-m <--> UC2 : Play and Gain
-m ----> "Use" UC3
-m <-----> UC4 : Contribute and Gain
-m ----> UC5 : "Update"
-m ----> UC6 : "View"
-m ----> UC7 :  "Build"
+m <-[#orange]-> UC1 : Play and Gain
+m <-[#red]-> UC2 : Play and Gain
+m ----> UC3 : Use
+m <--[#red]---> UC4 : Contribute and Gain
+m ----> UC5 : Update
+m ----> UC6 : View
+m ----> UC7 : Build
+
 
 
 @enduml

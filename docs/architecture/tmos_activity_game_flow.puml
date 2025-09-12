@@ -1,5 +1,19 @@
 @startuml
-!theme sketchy-outline
+!theme sketchy
+
+skinparam activity {
+  BackgroundColor #E3F2FD
+  BorderColor #1976D2
+  FontColor #0D47A1
+}
+skinparam activityDiamondBackgroundColor #FFF3E0
+skinparam activityDiamondBorderColor #FF6F00
+skinparam activityDiamondFontColor #BF360C
+skinparam activityStartColor #4CAF50
+skinparam activityEndColor #F44336
+
+skinparam ArrowFontColor black
+
 title <size:20> TMOS Whiffie <&heart> Game Flow
 
 start
@@ -7,8 +21,8 @@ start
 :Load Daily Challenge;
 
 repeat
-  :Hints & Guess;
-  :Check Guess;
+
+  :Guess;
   if (Guess is Correct?) then (yes)
     if (Is Member?) then (yes)
       :Dashboard;

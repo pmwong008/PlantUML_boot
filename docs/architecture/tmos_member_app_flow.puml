@@ -1,10 +1,15 @@
 @startuml
-!theme sketchy-outline
+!theme sketchy
+skinparam handwritten true
+
+skinparam ArrowFontColor black
+skinparam ActorFontColor black
+
 title: <size:20> <&account-login> TMOS Member App Flow
 actor Member
-participant "Launch TMOS" as App
-participant "Member Service" as Backend
-database "Database" as DB
+participant "Launch TMOS" as App #02db06
+participant "Member Service" as Backend #2737b8
+database "Database" as DB #ffb303
 
 Member -> App: Login
 App -> Backend: Send Credentials
