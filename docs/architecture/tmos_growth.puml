@@ -1,0 +1,28 @@
+@startgantt
+!theme sketchy
+' Set the project start date
+Project starts the 20th of October 2025
+
+' Show the calendar along the top
+printscale weekly
+
+' Define tasks
+[Onboarding] as [TASK1] lasts 3 weeks
+[TASK1] is colored in DarkGreen/LightBlue
+
+[Early Adoption] as [TASK2] starts at the 1st of November 2025 and lasts 4 weeks
+[TASK2] is colored in DarkOrange/Green
+
+[Feedback Collection] as [TASK3] starts at 1st of November 2025 and lasts 4 weeks
+[TASK3] is colored in DarkGrey/Red
+
+[Iteration & Optimization] as [TASK4] starts at [TASK3]'s end and lasts 5 weeks
+[TASK4] is colored in LightCoral/Red
+
+[Long-term Engagement] as [TASK5] starts at [TASK4]'s end and lasts 8 weeks
+[TASK5] is colored in DarkRed/Red
+
+' Optional: add a milestone
+[Long-Term Retention] happens at [TASK5]'s end
+
+@endgantt
