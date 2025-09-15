@@ -28,3 +28,5 @@ https://medium.com/@erickzanetti/understanding-the-c4-model-a-practical-guide-wi
 https://medium.com/@usetech/visualizing-the-architecture-with-the-c4-model-and-plantuml-fe45af55a814
 https://medium.com/software-architecture-foundations/software-architecture-modeling-with-c4-model-e9e61d952121
 https://apiumhub.com/tech-blog-barcelona/c4-plantuml/
+
+dist/Databases/AzureManagedDatabase.png

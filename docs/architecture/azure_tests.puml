@@ -3,6 +3,7 @@
 !include <azure/Analytics/AzureEventHub>
 !include <azure/Analytics/AzureStreamAnalyticsJob>
 !include <azure/Databases/AzureCosmosDb>
+!include <azure/Databases/AzureDatabaseForPostgreSQL>
 
 left to right direction
 
@@ -12,10 +13,12 @@ AzureEventHub(fareDataEventHub, "Fare Data", "PK: Medallion HackLicense VendorId
 AzureEventHub(tripDataEventHub, "Trip Data", "PK: Medallion HackLicense VendorId; 3 TUs")
 AzureStreamAnalyticsJob(streamAnalytics, "Stream Processing", "6 SUs")
 AzureCosmosDb(outputCosmosDb, "Output Database", "1,000 RUs")
+AzureDatabaseForPostgreSQL(dbPostgre, "Output Database", "1,000 RUs")
 
 devices --> fareDataEventHub
 devices --> tripDataEventHub
 fareDataEventHub --> streamAnalytics
 tripDataEventHub --> streamAnalytics
 streamAnalytics --> outputCosmosDb
+outputCosmosDb --> dbPostgre
 @enduml

@@ -1,6 +1,7 @@
 @startuml
+'!include ./C4-PlantUML/C4_Context.puml
 
-!theme sketchy
+'!theme sketchy
 title: <size:40><&person>Use of OpenIconic<&cog></size>
 actor Customer
 actor Admin
