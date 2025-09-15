@@ -30,3 +30,4 @@ https://medium.com/software-architecture-foundations/software-architecture-model
 https://apiumhub.com/tech-blog-barcelona/c4-plantuml/
 
 dist/Databases/AzureManagedDatabase.png
+https://github.com/plantuml-stdlib
