@@ -1,0 +1,65 @@
+@startuml
+
+title CRM Order Management System - C4 - Class Diagram
+
+class AbstractUser {
+    + string username <<PK>>
+    + string user_email
+    + string first_name
+    + string last_name
+    + boolean is_staff
+    + boolean is_active
+    + dateTime date_joined
+
+}
+class CustomUser {
+	+ imageField avatar (null=True, blank=True)
+}
+
+class Order {
+	+ string User <<FK>>
+	+ int Product_id <<FK>>
+	+ string address
+	+ boolean state (default=False)
+	+ dateTime created_at (auto_now_add=True)
+}
+
+class OrderItem {
+  + int ItemId <<PK>>
+  + int OrderId <<FK>> -- References Order.OrderId
+  + int ProductId <<FK>> -- References Product.ProductId
+  + int Quantity
+}
+
+class Product {
+    + int Product_id <<PK>>
+    + string perfume_name
+	+ string perfume_brand
+	+ string svg_value
+    + int QuantityAvailable
+    + UpdateInventory(int quantity)
+}
+
+class CourierService {
+  + ProcessOrder
+}
+
+class SupplierService {
+  + NotifySupplier(OrderItem orderItem)
+}
+
+
+class Post {
+}
+
+CustomUser "1" -> "*" Order : places
+CustomUser --> AbstractUser : references
+Order "1" --> "*" OrderItem : contains
+OrderItem "1" -> "*" Product : "references"
+SupplierService -> CourierService : initiates
+CourierService ---> AbstractUser : "references"
+CourierService --> Post
+
+OrderItem --> SupplierService : "requests"
+
+@enduml
