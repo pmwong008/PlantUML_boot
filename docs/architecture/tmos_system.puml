@@ -6,6 +6,7 @@
 ' LAYOUT_TOP_DOWN()
 ' LAYOUT_AS_SKETCH()
 ' LAYOUT_WITH_LEGEND()
+AddElementTag("backendContainer", $fontColor=$ELEMENT_FONT_COLOR, $bgColor="#335DA5", $shape=EightSidedShape(), $legendText="backend container\neight sided")
 
 title System Diagram for TMOS
 
@@ -16,7 +17,7 @@ System_Boundary(c1, "Django Web Application") {
     Container(wiki, "Wiki", "A space for search, rate and comments", "The more a member contributes, the more points they collect.")
     Container(selfie, "Selfie", "A dashboard space", "Provides statistics, badges and entitlement.", "dotnet")
 
-    Container(backend_api, "APIs (in view.py)", "Java, Docker Container", "Provides scrawling and filtering functionality via API", "server")
+    Container(backend_api, "APIs (in view.py)", "Provides web crawling and filtering functionality via API", $tags="backendContainer")
 }
 
 ContainerDb(db_mongo, "Admin DB", "MongoDB", "Stores user registration information, hashed auth credentials, access logs, etc.", "mongo_server")
