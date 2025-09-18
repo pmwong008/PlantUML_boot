@@ -1,7 +1,7 @@
 @startuml
 ' uncomment the following line and comment the first to use locally
 !include ./C4-PlantUML/C4_Container.puml
-!theme sketchy
+'!theme sketchy
 
 ' LAYOUT_TOP_DOWN()
 ' LAYOUT_AS_SKETCH()
@@ -26,17 +26,21 @@ System_Ext(External_AI, "AI", "The external AI system", "envelope")
 
 Rel(member, whiffy, "Uses")
 Rel(member, wiki, "Uses")
-Rel(member, selfie, "Uses")
+Rel(member, selfie, "Members Only")
 
 ' Rel_Neighbor(whiffy, wiki, "Delivers")
 Rel(wiki, backend_api, "Uses", "async, JSON/HTTPS")
 Rel(whiffy, backend_api, "Uses", "async, JSON/HTTPS")
 Rel(selfie, backend_api, "Uses", "async, JSON/HTTPS")
 
-Rel_Back_Neighbor(db_mongo, backend_api, "Reads from and writes to", "sync, JDBC")
-Rel_Back_Neighbor(db_sql, backend_api, "Reads from and writes to", "sync, JDBC")
+Rel_Back_Neighbor(db_mongo, backend_api, "Reads from", "sync, JDBC")
+Rel(backend_api, db_sql,  "Reads from", "sync, JDBC")
 
 'Rel_Back(member, External_AI, "Sends e-mails to")
 Rel_Neighbor(backend_api, External_AI,  "Sends requests to", "sync, SMTP")
 ' Rel_Back(External_AI, backend_api, "Sends e-mails using", "sync, SMTP")
+
+Person(admin, Admin, "With admin privileges")
+Rel_Neighbor(admin, db_mongo, "Manage", "sync, JDBC")
+Rel(admin, db_sql, "Manage", "sync, JDBC")
 @enduml
