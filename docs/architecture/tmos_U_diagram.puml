@@ -1,0 +1,8 @@
+@startuml
+object url
+object path_mapping
+object xxx
+object Database
+url -> path_mapping : http Request
+path_mapping -> xxx : Store Order
+@enduml
