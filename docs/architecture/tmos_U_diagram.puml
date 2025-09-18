@@ -3,6 +3,16 @@ object url
 object path_mapping
 object xxx
 object Database
+object Views
+object D {
+  name : String
+  age : Integer
+  isActive : Boolean
+}
+note right of Views
+  This is a large block of text
+  that makes D look bigger.
+end note
 url -> path_mapping : http Request
-path_mapping -> xxx : Store Order
+path_mapping -down-> xxx : Store Order
 @enduml
