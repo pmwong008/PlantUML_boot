@@ -1,6 +1,6 @@
 @startuml
 
-title CRM Order Management System - C4 - Class Diagram
+title TMOS Class Diagram
 
 class AbstractUser {
     + string username <<PK>>

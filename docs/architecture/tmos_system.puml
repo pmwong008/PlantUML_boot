@@ -1,38 +1,42 @@
 @startuml
 ' uncomment the following line and comment the first to use locally
 !include ./C4-PlantUML/C4_Container.puml
-
+!theme sketchy
 
 ' LAYOUT_TOP_DOWN()
 ' LAYOUT_AS_SKETCH()
-LAYOUT_WITH_LEGEND()
+' LAYOUT_WITH_LEGEND()
 
 title System Diagram for TMOS
 
-Person(customer, Member, "A member with account details and a Profile")
+Person(member, Member or Guest, "With different user privileges")
 
 System_Boundary(c1, "Django Web Application") {
-    Container(whiffy, "Whiffy", "A space for asking questions and play word games.", "Respond with recommendations", "java")
-    Container(wiki, "Wiki", "A space for search, rate and comments", "The more a member contributes, the more points they collect.", "angular")
+    Container(whiffy, "Whiffy", "A space for asking questions and play word games.", "Respond with recommendations")
+    Container(wiki, "Wiki", "A space for search, rate and comments", "The more a member contributes, the more points they collect.")
     Container(selfie, "Selfie", "A dashboard space", "Provides statistics, badges and entitlement.", "dotnet")
-    ContainerDb(db_mongo, "Admin DB", "MongoDB", "Stores user registration information, hashed auth credentials, access logs, etc.", "mongo_server")
-    ContainerDb(db_sql, "Perfume DB", "SQL Database", "Stores Perfume information.", "mysql_server")
+
     Container(backend_api, "APIs (in view.py)", "Java, Docker Container", "Provides scrawling and filtering functionality via API", "server")
 }
 
-System_Ext(email_system, "E-Mail System", "The internal Microsoft Exchange system", "envelope")
-System_Ext(banking_system, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+ContainerDb(db_mongo, "Admin DB", "MongoDB", "Stores user registration information, hashed auth credentials, access logs, etc.", "mongo_server")
+ContainerDb(db_sql, "Perfume DB", "SQL Database", "Stores Perfume information.", "mysql_server")
 
-Rel(customer, whiffy, "Uses", "HTTPS")
-Rel(customer, wiki, "Uses", "HTTPS")
-Rel(customer, selfie, "Uses")
+System_Ext(External_AI, "AI", "The external AI system", "envelope")
 
-Rel_Neighbor(whiffy, wiki, "Delivers")
+Rel(member, whiffy, "Uses")
+Rel(member, wiki, "Uses")
+Rel(member, selfie, "Uses")
+
+' Rel_Neighbor(whiffy, wiki, "Delivers")
 Rel(wiki, backend_api, "Uses", "async, JSON/HTTPS")
+Rel(whiffy, backend_api, "Uses", "async, JSON/HTTPS")
 Rel(selfie, backend_api, "Uses", "async, JSON/HTTPS")
-Rel_Back_Neighbor(db_mongo, backend_api, "Reads from and writes to", "sync, JDBC")
 
-Rel_Back(customer, email_system, "Sends e-mails to")
-Rel_Back(email_system, backend_api, "Sends e-mails using", "sync, SMTP")
-Rel_Neighbor(backend_api, banking_system, "Uses", "sync/async, XML/HTTPS")
+Rel_Back_Neighbor(db_mongo, backend_api, "Reads from and writes to", "sync, JDBC")
+Rel_Back_Neighbor(db_sql, backend_api, "Reads from and writes to", "sync, JDBC")
+
+'Rel_Back(member, External_AI, "Sends e-mails to")
+Rel_Neighbor(backend_api, External_AI,  "Sends requests to", "sync, SMTP")
+' Rel_Back(External_AI, backend_api, "Sends e-mails using", "sync, SMTP")
 @enduml
