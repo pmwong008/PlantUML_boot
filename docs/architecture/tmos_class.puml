@@ -3,13 +3,13 @@
 title TMOS Class Diagram
 
 abstract class User {
-    + string username <<PK>>
-    + string user_email
-    + string first_name
-    + string last_name
-    + boolean is_staff
-    + boolean is_active
-    + dateTime date_joined
+    - string username <<PK>>
+    - string user_email
+    - string first_name
+    - string last_name
+    + boolean is_staff()
+    + boolean is_active()
+    - dateTime date_joined
 
 }
 class CustomUser {
@@ -17,6 +17,7 @@ class CustomUser {
 }
 
 class Order {
+    - int Order_id <<PK>>
 	- string User <<FK>>
 	- int Product_id <<FK>>
 	- string address
@@ -25,7 +26,7 @@ class Order {
 }
 
 class OrderItem {
-  - int ItemId <<PK>>
+  - int Item_id <<PK>>
   - int OrderId <<FK>> -- References Order.OrderId
   - int ProductId <<FK>> -- References Product.ProductId
   + int Quantity()
@@ -35,7 +36,7 @@ class Product {
     - int Product_id <<PK>>
     - string perfume_name
 	- string perfume_brand
-	+ string svg_value()
+	- string svg_value
     + int QuantityAvailable()
     + UpdateInventory(int quantity)
 }
@@ -50,6 +51,11 @@ class SupplierService {
 
 
 class Post {
+}
+
+class Points extends CustomUser{
+    + Commenting()
+    + Rating()
 }
 
 CustomUser "1" -> "*" Order : places
