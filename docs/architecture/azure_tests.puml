@@ -4,8 +4,18 @@
 !include <azure/Analytics/AzureStreamAnalyticsJob>
 !include <azure/Databases/AzureCosmosDb>
 !include <azure/Databases/AzureDatabaseForPostgreSQL>
+' !includeurl https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/release/2-2/dist/AzureCommon.puml
+!define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/release/2-2/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Databases/all.puml
+!includeurl AzurePuml/Compute/AzureFunction.puml
 
+actor "Person" as personAlias
+AzureFunction(functionAlias, "Label", "Technology", "Optional Description")
+AzureCosmosDb(cosmosDbAlias, "Label", "Technology", "Optional Description")
 
+personAlias --> functionAlias
+functionAlias --> cosmosDbAlias
 left to right direction
 
 agent "Device Simulator" as devices #fff
