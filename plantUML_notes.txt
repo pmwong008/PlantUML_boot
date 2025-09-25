@@ -31,3 +31,5 @@ https://apiumhub.com/tech-blog-barcelona/c4-plantuml/
 
 dist/Databases/AzureManagedDatabase.png
 https://github.com/plantuml-stdlib
+
+https://github.com/plantuml-stdlib/Azure-PlantUML/blob/master/AzureSymbols.md#azure-symbols
