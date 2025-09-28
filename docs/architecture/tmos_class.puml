@@ -13,7 +13,7 @@ abstract class User {
 
 }
 class CustomUser {
-	  + imageField avatar (null=True, blank=True)
+	+ imageField avatar (null=True, blank=True)
 }
 
 class Order {
@@ -35,8 +35,8 @@ class OrderItem {
 class Perfumes {
     - int id <<PK>>
     - string name
-	  - string brand
-	  - string image
+	- string brand
+	- string image
     - string launch_year
     - jsonField main_accords
     - jsonField notes
