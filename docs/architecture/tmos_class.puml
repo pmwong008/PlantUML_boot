@@ -13,32 +13,57 @@ abstract class User {
 
 }
 class CustomUser {
-	+ imageField avatar (null=True, blank=True)
+	  + imageField avatar (null=True, blank=True)
 }
 
 class Order {
     - int Order_id <<PK>>
-	- string User <<FK>>
-	- int Product_id <<FK>>
-	- string address
-	+ boolean state (default=False)
-	+ dateTime created_at (auto_now_add=True)
+    - string User <<FK>>
+    - int Product_id <<FK>>
+    - string address
+    + boolean state (default=False)
+    + dateTime created_at (auto_now_add=True)
 }
 
 class OrderItem {
-  - int Item_id <<PK>>
-  - int OrderId <<FK>> -- References Order.OrderId
-  - int ProductId <<FK>> -- References Product.ProductId
-  + int Quantity()
+    - int Item_id <<PK>>
+    - int OrderId <<FK>> -- References Order.OrderId
+    - int ProductId <<FK>> -- References Product.ProductId
+    + int Quantity()
 }
 
-class Product {
-    - int Product_id <<PK>>
-    - string perfume_name
-	- string perfume_brand
-	- string svg_value
-    + int QuantityAvailable()
-    + UpdateInventory(int quantity)
+class Perfumes {
+    - int id <<PK>>
+    - string name
+	  - string brand
+	  - string image
+    - string launch_year
+    - jsonField main_accords
+    - jsonField notes
+    - jsonField longevity
+    - jsonField sillage
+    + int QuantityAvailable(quantity)
+    + int UpdateInventory(quantity)
+    class metaclass:
+        managed = True
+        db_table = 'perfumes'
+}
+
+class Review {
+    - int Review_id <<PK>>
+    - int Perfume <<FK>> -- References Product.ProductId
+    - string User <<FK>> -- References CustomUser.username
+    - int gender
+    - int price_value
+    - int longevity
+    - int sillage
+    - int season
+    - int Rating (1 to 5)
+    - text Content
+    - dateTime created_at (auto_now_add=True)
+    class metaclass:
+        unique_together = ('user', 'perfume') 
+      
 }
 
 class CourierService {
@@ -61,7 +86,7 @@ class Points extends CustomUser{
 CustomUser "1" -> "*" Order : places
 CustomUser --> User : references
 Order "1" --> "*" OrderItem : contains
-OrderItem "1" -> "*" Product : "references"
+OrderItem "1" -> "*" Perfume : "references"
 SupplierService -> CourierService : initiates
 CourierService ---> User : "references"
 CourierService --> Post
