@@ -16,7 +16,8 @@ class CustomUser {
 	+ imageField avatar (null=True, blank=True)
 }
 
-class Order {
+
+class OrderGamePoints {
     - int Order_id <<PK>>
     - string User <<FK>>
     - int Product_id <<FK>>
@@ -49,7 +50,7 @@ class Perfumes {
         db_table = 'perfumes'
 }
 
-class Review {
+class ReviewPoints {
     - int Review_id <<PK>>
     - int Perfume <<FK>> -- References Product.ProductId
     - string User <<FK>> -- References CustomUser.username
@@ -66,31 +67,27 @@ class Review {
       
 }
 
-class CourierService {
+class SupplyAndCourierService {
   + ProcessOrder()
 }
 
-class SupplierService {
-  + NotifySupplier(OrderItem orderItem)
-}
 
 
-class Post {
-}
-
-class Points extends CustomUser{
-    + Commenting()
+class Points {
+    + Review()
     + Rating()
 }
 
-CustomUser "1" -> "*" Order : places
-CustomUser --> User : references
-Order "1" --> "*" OrderItem : contains
-OrderItem "1" -> "*" Perfume : "references"
-SupplierService -> CourierService : initiates
-CourierService ---> User : "references"
-CourierService --> Post
+CustomUser -> ReviewPoints
+CustomUser -right-> OrderGamePoints
+OrderGamePoints -down-> Points
+ReviewPoints -> Points
+Points->OrderItem: unlock
+OrderItem-down-> Perfumes : reference
+CustomUser -left-> User : reference
+OrderItem -> SupplyAndCourierService : initiates
+SupplyAndCourierService -> Post
+SupplyAndCourierService ---> User : reference
 
-OrderItem --> SupplierService : "requests"
 
 @enduml
